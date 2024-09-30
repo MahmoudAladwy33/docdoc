@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medilink/core/theme/styles.dart';
+import 'package:medilink/core/theme/text_styles.dart';
 
 class DocLogoAndName extends StatelessWidget {
   const DocLogoAndName({super.key});
@@ -17,7 +17,7 @@ class DocLogoAndName extends StatelessWidget {
         ),
         Text(
           'DocDoc',
-          style: Textstyles.font24Black700Weight,
+          style: TextStyles.font24BlackBold,
         ),
       ],
     );
