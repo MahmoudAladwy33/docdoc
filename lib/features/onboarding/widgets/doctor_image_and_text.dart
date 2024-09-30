@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medilink/core/theme/styles.dart';
+import 'package:medilink/core/theme/text_styles.dart';
 
 class DoctorImageAndText extends StatelessWidget {
   const DoctorImageAndText({super.key});
@@ -31,7 +31,7 @@ class DoctorImageAndText extends StatelessWidget {
           child: Text(
             textAlign: TextAlign.center,
             'Best Doctor\nAppointment App',
-            style: Textstyles.font32BlueBold.copyWith(
+            style: TextStyles.font32BlueBold.copyWith(
               height: 1.4,
             ),
           ),
