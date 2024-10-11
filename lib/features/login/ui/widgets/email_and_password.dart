@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medilink/core/helpers/app_regex.dart';
 import 'package:medilink/core/helpers/spacing.dart';
 import 'package:medilink/core/widgets/app_text_form_field.dart';
-import 'package:medilink/features/login/logic/cubit/login_cubit.dart';
+import 'package:medilink/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:medilink/features/login/ui/widgets/password_validation.dart';
 
 class EmailAndPassword extends StatefulWidget {
@@ -65,7 +65,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           AppTextFormField(
             controller: context.read<LoginCubit>().passwordController,
             hintText: 'Password',
-            obscureText: isObscure,
+            isObscureText: isObscure,
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
