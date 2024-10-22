@@ -23,7 +23,7 @@ jobs:
       with:
         channel: stable
 
-    - name: Setup Ruby
+    - name: Setup ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: "3.2.3"
