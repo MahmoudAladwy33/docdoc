@@ -15,7 +15,7 @@ platform :android do
         android_artifact_type: "APK",
         android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
         testers: "aladwymahmoud@gmail.com",
-        release_notes: "Testing something with GitHub Actions, trying to push directly from master branch",
+        release_notes: "release V1.0.3",
   )
   end
 end
