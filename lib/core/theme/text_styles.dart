@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medilink/core/theme/colors.dart';
+import 'package:medilink/core/theme/colors_manager.dart';
 import 'package:medilink/core/theme/font_weight_helper.dart';
 
 class TextStyles {
@@ -64,6 +64,12 @@ class TextStyles {
     color: ColorsManager.darkBlue,
   );
 
+  static TextStyle font18DarkBlueBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.darkBlue,
+  );
+
   static TextStyle font13GrayRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
@@ -72,6 +78,12 @@ class TextStyles {
 
   static TextStyle font14GrayRegular = TextStyle(
     fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.gray,
+  );
+
+  static TextStyle font12GrayRegular = TextStyle(
+    fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.gray,
   );

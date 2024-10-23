@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medilink/core/helpers/spacing.dart';
-import 'package:medilink/core/theme/colors.dart';
+import 'package:medilink/core/theme/colors_manager.dart';
 import 'package:medilink/core/theme/text_styles.dart';
 class PasswordValidations extends StatelessWidget {
   final bool hasLowerCase;

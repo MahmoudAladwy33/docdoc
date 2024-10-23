@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medilink/core/routing/app_router.dart';
 import 'package:medilink/core/routing/routes.dart';
-import 'package:medilink/core/theme/colors.dart';
+import 'package:medilink/core/theme/colors_manager.dart';
 
 class DocApp extends StatelessWidget {
   const DocApp({super.key, required this.appRouter});
