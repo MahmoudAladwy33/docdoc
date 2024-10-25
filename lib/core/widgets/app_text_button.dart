@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:medilink/core/theme/colors.dart';
+import 'package:medilink/core/theme/colors_manager.dart';
 
 class AppTextButton extends StatelessWidget {
   final double? borderRadius;
