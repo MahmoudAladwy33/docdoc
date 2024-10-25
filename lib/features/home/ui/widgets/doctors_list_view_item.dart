@@ -6,9 +6,11 @@ import 'package:medilink/core/theme/colors_manager.dart';
 import 'package:medilink/core/theme/text_styles.dart';
 import 'package:shimmer/shimmer.dart';
 
-class DoctorsListViewItem extends StatelessWidget {
-  const DoctorsListViewItem({super.key});
+import '../../data/models/specialization_response_model.dart';
 
+class DoctorsListViewItem extends StatelessWidget {
+  const DoctorsListViewItem({super.key, this.doctorsModel});
+  final Doctors? doctorsModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,18 +54,18 @@ class DoctorsListViewItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Name',
+                  doctorsModel?.name ?? 'name',
                   style: TextStyles.font18DarkBlueBold,
                   overflow: TextOverflow.ellipsis,
                 ),
                 verticalSpace(5),
                 Text(
-                  'Degree | 01002359841',
+                  ' ${doctorsModel?.degree } | ${doctorsModel?.phone}',
                   style: TextStyles.font12GrayMedium,
                 ),
                 verticalSpace(5),
                 Text(
-                  'Email',
+                  doctorsModel?.email?? 'email',
                   style: TextStyles.font12GrayMedium,
                 ),
               ],
