@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medilink/core/helpers/spacing.dart';
+import 'package:medilink/features/home/ui/widgets/doctors_list_view.dart';
 import 'package:medilink/features/home/ui/widgets/doctor_speciality_see_all.dart';
 import 'package:medilink/features/home/ui/widgets/doctors_blue_container.dart';
 import 'package:medilink/features/home/ui/widgets/home_top_bar.dart';
@@ -29,7 +30,10 @@ class HomeScreen extends StatelessWidget {
               const DoctorsBlueContainer(),
               verticalSpace(16),
               const DoctorSpecialitySeeAll(),
+              verticalSpace(16),
               const DoctorSpecialityListView(),
+              verticalSpace(8),
+              const DoctorsListView(),
             ],
           ),
         ),

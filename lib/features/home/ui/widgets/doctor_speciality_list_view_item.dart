@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medilink/core/helpers/spacing.dart';
+import 'package:medilink/core/theme/colors_manager.dart';
 import 'package:medilink/core/theme/text_styles.dart';
 
 class DoctorSpecialityListViewItem extends StatelessWidget {
@@ -14,9 +15,9 @@ class DoctorSpecialityListViewItem extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 28,
-          backgroundColor: Colors.lightBlue,
+          backgroundColor: ColorsManager.lightBlue,
           child: SvgPicture.asset(
-            'assets/svgs/notifications.svg',
+            'assets/svgs/general_speciality.svg',
             height: 40.h,
             width: 40.w,
           ),
