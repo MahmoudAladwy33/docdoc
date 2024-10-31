@@ -1,32 +1,37 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:medilink/core/helpers/extensions.dart';
 part 'api_error_model.g.dart';
 
 @JsonSerializable()
 class ApiErrorModel {
   final String? message;
-  final Data? data;
   final int? code;
+  @JsonKey(name: 'data')
+  Map<String, dynamic>? errors;
 
   ApiErrorModel({
-    required this.message,
+    this.message,
     this.code,
-    this.data,
+    this.errors,
   });
 
   factory ApiErrorModel.fromJson(Map<String, dynamic> json) =>
       _$ApiErrorModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ApiErrorModelToJson(this);
-}
 
-@JsonSerializable()
-class Data {
-  final List<String>? password;
+  /// Returns a string containing all error messages
+  String getAllErrorMessages() {
+    if (errors.isNullOrEmpty()) return message ?? "Unknown error occurred";
 
-  Data(this.password);
-
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
-  Map<String, dynamic> toJson() {
-    return _$DataToJson(this);
+    final errorMessage = errors!.entries.map((entry) {
+      final value = entry.value;
+      return "${value.join(',')}";
+    }).join('\n');
+    return errorMessage;
   }
 }
+
+
+
+
