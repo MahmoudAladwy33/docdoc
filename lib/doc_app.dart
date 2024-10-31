@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medilink/core/routing/app_router.dart';
 import 'package:medilink/core/routing/routes.dart';
 import 'package:medilink/core/theme/colors_manager.dart';
+import 'core/helpers/constants.dart';
 
 class DocApp extends StatelessWidget {
   const DocApp({super.key, required this.appRouter});
@@ -19,7 +20,7 @@ class DocApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.homeScreen,
+        initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
