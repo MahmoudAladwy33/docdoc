@@ -7,6 +7,7 @@ import 'package:medilink/features/login/data/models/login_response.dart';
 import 'package:medilink/features/sign_up/data/models/sign_up_request_body.dart';
 import 'package:medilink/features/sign_up/data/models/sign_up_response.dart';
 import 'package:retrofit/http.dart';
+import 'package:retrofit/retrofit.dart';
 
 part 'api_service.g.dart';
 

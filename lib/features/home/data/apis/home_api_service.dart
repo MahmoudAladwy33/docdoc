@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:medilink/core/networking/api_constants.dart';
 import 'package:retrofit/http.dart';
+import 'package:retrofit/retrofit.dart';
 
 import '../models/specialization_response_model.dart';
 import 'home_api_constants.dart';
