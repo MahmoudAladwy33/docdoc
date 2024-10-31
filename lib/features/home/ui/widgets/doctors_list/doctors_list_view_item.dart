@@ -6,7 +6,7 @@ import 'package:medilink/core/theme/colors_manager.dart';
 import 'package:medilink/core/theme/text_styles.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../data/models/specialization_response_model.dart';
+import '../../../data/models/specialization_response_model.dart';
 
 class DoctorsListViewItem extends StatelessWidget {
   const DoctorsListViewItem({super.key, this.doctorsModel});

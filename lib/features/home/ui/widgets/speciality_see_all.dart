@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:medilink/core/theme/text_styles.dart';
 
-class DoctorSpecialitySeeAll extends StatelessWidget {
-  const DoctorSpecialitySeeAll({super.key});
+class SpecialitySeeAll extends StatelessWidget {
+  const SpecialitySeeAll({super.key});
 
   @override
   Widget build(BuildContext context) {

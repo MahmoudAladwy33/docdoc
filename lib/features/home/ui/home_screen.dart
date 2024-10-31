@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medilink/core/helpers/spacing.dart';
-import 'package:medilink/features/home/ui/widgets/doctor_speciality_see_all.dart';
+import 'package:medilink/features/home/ui/widgets/speciality_see_all.dart';
 import 'package:medilink/features/home/ui/widgets/doctors_blue_container.dart';
 import 'package:medilink/features/home/ui/widgets/home_top_bar.dart';
-import 'widgets/specializations_and_doctors_bloc_builder.dart';
+import 'widgets/doctors_list/doctors_bloc_builder.dart';
+import 'widgets/speciality_list/specializations_bloc_builder.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -26,16 +27,16 @@ class HomeScreen extends StatelessWidget {
             children: [
               const HomeTopBar(),
               const DoctorsBlueContainer(),
-              verticalSpace(16),
-              const DoctorSpecialitySeeAll(),
-              verticalSpace(16),
-              const SpecializationsAndDoctorsBlocBuilder(),
+              verticalSpace(24),
+              const SpecialitySeeAll(),
+              verticalSpace(18),
+              const SpecializationsBlocBuilder(),
+              verticalSpace(8),
+              const DoctorsBlocBuilder(),
             ],
           ),
         ),
       ),
     );
   }
-
-  
 }
