@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medilink/core/helpers/extensions.dart';
 import 'package:medilink/features/home/data/repos/home_repo.dart';
 import 'package:medilink/features/home/logic/home_cubit/home_state.dart';
-import '../../../../core/networking/api_error_handler.dart';
 import '../../data/models/specialization_response_model.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -25,8 +24,8 @@ class HomeCubit extends Cubit<HomeState> {
         emit(HomeState.specializationsSuccess(
             specializationsResponseModel.specializationDataList));
       },
-      failure: (errorHandler) {
-        emit(HomeState.specializationsError(errorHandler));
+      failure: (apiErrorModel) {
+        emit(HomeState.specializationsError(apiErrorModel));
       },
     );
   }
@@ -35,10 +34,10 @@ class HomeCubit extends Cubit<HomeState> {
     List<Doctors?>? doctorsList =
         getDoctorsListBySpecializationId(specializationId);
 
-    if (!doctorsList.isNullOrEmpty()) { 
+    if (!doctorsList.isNullOrEmpty()) {
       emit(HomeState.doctorsSuccess(doctorsList));
     } else {
-      emit(HomeState.doctorsError(ErrorHandler.handle('No doctors found')));
+      emit(const HomeState.doctorsError());
     }
   }
 

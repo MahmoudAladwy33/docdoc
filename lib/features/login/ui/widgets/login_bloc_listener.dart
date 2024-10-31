@@ -7,6 +7,8 @@ import 'package:medilink/core/theme/text_styles.dart';
 import 'package:medilink/features/login/logic/login_cubit/login_cubit.dart';
 import 'package:medilink/features/login/logic/login_cubit/login_state.dart';
 
+import '../../../../core/networking/api_error_model.dart';
+
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});
 
@@ -14,10 +16,12 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is LoginLoading ||
+          current is LoginSuccess ||
+          current is LoginError,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
+          loginLoading: () {
             showDialog(
               context: context,
               builder: (context) => const Center(
@@ -27,12 +31,12 @@ class LoginBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (loginResponse) {
+          loginSuccess: (loginResponse) {
             context.pop();
             context.pushNamed(Routes.homeScreen);
           },
-          error: (error) {
-            setupErrorState(context, error);
+          loginError: (apiErrorModel) {
+            setupErrorState(context, apiErrorModel);
           },
         );
       },
@@ -40,7 +44,7 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context,ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
@@ -51,7 +55,7 @@ class LoginBlocListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
+          apiErrorModel.message!,
           style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [
